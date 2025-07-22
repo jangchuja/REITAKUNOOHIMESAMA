@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>木元さんの物語</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+  <canvas id="cursorCanvas"></canvas>
+
+  <div class="section hero">
+    <h1 class="fade">静かに、でも確かに。</h1>
+    <p class="fade">足跡のように残る、あなたの物語。</p>
+  </div>
+
+  <div class="section about">
+    <h2 class="fade">木元さんについて</h2>
+    <p class="fade">韓国で活躍する日本人として、日々の営みと出会いを大切にしています。</p>
+  </div>
+
+  <div class="section gallery">
+    <h2 class="fade">ギャラリー</h2>
+    <div class="images fade">
+      <img src="your-photo1.jpg" alt="写真1" />
+      <img src="your-photo2.jpg" alt="写真2" />
+    </div>
+  </div>
+
+  <div class="section contact">
+    <h2 class="fade">お問い合わせ</h2>
+    <form id="contactForm" class="fade">
+      <input type="text" placeholder="お名前" required />
+      <input type="email" placeholder="メールアドレス" required />
+      <textarea placeholder="メッセージをどうぞ" required></textarea>
+      <button type="submit">送信</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
