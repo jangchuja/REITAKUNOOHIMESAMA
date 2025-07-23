@@ -1,3 +1,4 @@
+/* 기본 스타일 */
 body {
   margin: 0;
   font-family: 'Noto Serif JP', serif;
@@ -6,9 +7,26 @@ body {
   overflow-x: hidden;
 }
 
+/* 팀명 헤더 */
+.site-header {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  text-align: center;
+  z-index: 10000;
+}
+
+.team-name {
+  font-size: 1.5rem;
+  color: #7e7e7e;
+  letter-spacing: 2px;
+  opacity: 0.8;
+}
+
+/* 콘텐츠 섹션 */
 .section {
-  min-height: 100vh;
-  padding: 80px 20px;
+  height: 100vh;
+  padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -26,6 +44,7 @@ p {
   font-size: 1.2rem;
 }
 
+/* 이미지 갤러리 */
 .images {
   display: flex;
   gap: 20px;
@@ -40,6 +59,7 @@ p {
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
+/* 폼 */
 form {
   display: flex;
   flex-direction: column;
@@ -64,7 +84,7 @@ button {
   cursor: pointer;
 }
 
-/* Canvas for cursor trail */
+/* 마우스트레일 캔버스 */
 #cursorCanvas {
   position: fixed;
   top: 0;
@@ -73,12 +93,55 @@ button {
   z-index: 9999;
 }
 
-.section {
-  height: 100vh; /* min-height 대신 height */
-  padding: 0;     /* 불필요한 여백 제거 */
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* 수직 중앙 정렬 */
-  align-items: center;     /* 수평 중앙 정렬 */
-  text-align: center;
+/* 드롭다운 네비게이션 */
+.dropdown-nav {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10002;
+}
+
+/* 메뉴 버튼 - “メニュー” 텍스트, 둥근 사각형, 투명 배경, 그림자 제거 */
+.menu-toggle {
+  background: transparent;
+  border: 1px solid #aaa;
+  padding: 6px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #2e2e2e;
+  box-shadow: none;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+/* 드롭다운 메뉴 */
+.dropdown-menu {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  display: none;
+  background-color: transparent;
+  box-shadow: none;
+  border-radius: 8px;
+}
+
+.dropdown-menu li {
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #2e2e2e;
+  font-size: 1rem;
+}
+
+.dropdown-menu li:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu li a:hover {
+  background-color: rgba(255,255,255,0.15);
 }
