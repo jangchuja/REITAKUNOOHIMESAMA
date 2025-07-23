@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>家族 | 麗澤のお姫様</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+  <!-- 팀 이름 -->
+  <header class="site-header">
+    <h1 class="team-name">麗澤のお姫様</h1>
+  </header>
+
+  <!-- 메뉴 버튼 -->
+  <nav class="dropdown-nav">
+    <button class="menu-toggle">メニュー</button>
+    <ul class="dropdown-menu">
+      <li><a href="yakkyou.html">⚔️ 逆境</a></li>
+      <li><a href="korea.html">🇰🇷 韓国</a></li>
+      <li><a href="kaisha.html">🏢 会社</a></li>
+      <li><a href="kazoku.html">👨‍👩‍👧‍👦 家族</a></li>
+    </ul>
+  </nav>
+
+  <!-- 마우스트레일 캔버스 -->
+  <canvas id="cursorCanvas"></canvas>
+
+  <!-- 콘텐츠 -->
+  <div class="section hero" id="hero">
+    <h1 class="fade">絆がくれる安心と温もり。</h1>
+    <p class="fade">家族の存在が、私たちの人生に穏やかな光を注いでくれます。</p>
+  </div>
+
+  <div class="section about" id="about">
+    <h2 class="fade">家族という支え</h2>
+    <p class="fade">言葉を超えたつながり。悲しみも喜びも分かち合える関係こそが、かけがえのない力になります。</p>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // GSAP 애니메이션
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.utils.toArray(".fade").forEach(el => {
+      gsap.from(el, {
+        scrollTrigger: {
+          trigger: el,
+          start: "top 85%",
+          toggleActions: "play reverse play reverse"
+        },
+        opacity: 0,
+        y: 40,
+        duration: 1,
+        ease: "power2.out"
+      });
+    });
+
+    // 마우스트레일 효과
+    const canvas = document.getElementById("cursorCanvas");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const particles = [];
+    const mouse = { x: 0, y: 0 };
+
+    document.addEventListener("mousemove", e => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+      particles.push({ x: mouse.x, y: mouse.y, alpha: 1 });
+      if (particles.length > 30) particles.shift();
+    });
+
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 6 * p.alpha, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(120, 160, 255, ${p.alpha})`;
+        ctx.fill();
+        p.alpha *= 0.94;
+      });
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    // 드롭다운 메뉴 작동
+    const toggleBtn = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.dropdown-menu');
+    toggleBtn.addEventListener('click', () => {
+      menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+    });
+  </script>
+</body>
+</html>
