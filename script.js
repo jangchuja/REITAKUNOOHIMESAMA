@@ -1,22 +1,21 @@
+// GSAP ScrollTrigger 애니메이션
 gsap.registerPlugin(ScrollTrigger);
 
-// 스크롤 애니메이션
 gsap.utils.toArray(".fade").forEach(el => {
- gsap.from(el, {
-  scrollTrigger: {
-    trigger: el,
-    start: "top 85%",
-    toggleActions: "play reverse play reverse"
-  },
-  opacity: 0,
-  y: 40,
-  duration: 1,
-  ease: "power2.out"
+  gsap.from(el, {
+    scrollTrigger: {
+      trigger: el,
+      start: "top 85%",
+      toggleActions: "play reverse play reverse"
+    },
+    opacity: 0,
+    y: 40,
+    duration: 1,
+    ease: "power2.out"
+  });
 });
 
-});
-
-// 마우스트래킹 (차분한 파스텔 블루)
+// 마우스 트레일 파티클 효과
 const canvas = document.getElementById("cursorCanvas");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
@@ -50,10 +49,18 @@ function animate() {
 }
 animate();
 
-// 폼 전송 확인
+// 폼 전송 처리
 document.getElementById("contactForm").onsubmit = function (e) {
   e.preventDefault();
   alert("メッセージをありがとうございます。心より感謝いたします。");
   this.reset();
 };
+
+// 네비게이션 드롭다운 메뉴 제어
+const toggleBtn = document.querySelector('.menu-toggle');
+const menu = document.querySelector('.dropdown-menu');
+
+toggleBtn.addEventListener('click', () => {
+  menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+});
 
