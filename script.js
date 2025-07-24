@@ -49,12 +49,6 @@ function animate() {
 }
 animate();
 
-// 폼 전송 처리
-document.getElementById("contactForm").onsubmit = function (e) {
-  e.preventDefault();
-  alert("メッセージをありがとうございます。心より感謝いたします。");
-  this.reset();
-};
 
 // 네비게이션 드롭다운 메뉴 제어
 const toggleBtn = document.querySelector('.menu-toggle');
