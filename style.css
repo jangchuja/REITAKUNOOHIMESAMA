@@ -145,3 +145,25 @@ button {
 .dropdown-menu li a:hover {
   background-color: rgba(255,255,255,0.15);
 }
+
+.site-header {
+  position: fixed;       /* 고정 */
+  top: 20px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 10001;         /* 메뉴보다 약간 낮게 설정해도 OK */
+}
+
+.team-link {
+  text-decoration: none;
+}
+
+.team-name {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.5rem;
+  color: #7e7e7e;
+  letter-spacing: 2px;
+  opacity: 0.8;
+  cursor: pointer;
+}
