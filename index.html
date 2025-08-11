@@ -5,20 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>木元さんの物語</title>
   <link rel="stylesheet" href="./style.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+  <script src="./script.js" defer></script>
 </head>
 <body>
-  <!-- 팀 이름 헤더 -->
+
+  <!-- 헤더 -->
   <header class="site-header">
     <a href="./index.html" class="team-link">
       <h1 class="team-name">麗澤のお姫様</h1>
     </a>
   </header>
-  <!-- 네비게이션 메뉴 -->
-  <nav class="dropdown-nav">
-    <button class="menu-toggle">メニュー</button>
-    <ul class="dropdown-menu">
+
+  <!-- 오른쪽 커튼 토글 버튼 -->
+  <button id="curtainToggle" aria-expanded="false" aria-label="メニューを開く">
+    <img src="images/123.png" alt="커튼을 끄는 캐릭터 손" />
+  </button>
+
+  <!-- 커튼 메뉴 -->
+  <nav id="curtainMenu" aria-hidden="true" role="navigation" aria-label="메뉴">
+    <ul>
       <li><a href="./yakkyou.html">⚔️ 逆境</a></li>
       <li><a href="./korea.html">🇰🇷 韓国</a></li>
       <li><a href="./kaisha.html">🏢 会社</a></li>
@@ -26,8 +33,8 @@
     </ul>
   </nav>
 
-  <!-- 마우스트레일 캔버스 -->
-  <canvas id="cursorCanvas"></canvas>
+  <!-- 메뉴 오버레이 -->
+  <div id="overlay" tabindex="-1"></div>
 
   <!-- 메인 콘텐츠 -->
   <div class="section hero" id="hero">
@@ -37,27 +44,30 @@
 
   <div class="section about" id="about">
     <h2 class="fade">木元さんについて</h2>
-    <p class="fade">韓国で活躍する日本人として、日々의営みと出会いを大切にしています。</p>
+    <p class="fade">韓国で活躍する日本人として、日々の営みと出会いを大切にしています。</p>
   </div>
 
   <div class="section gallery" id="gallery">
     <h2 class="fade">最終章</h2>
     <div class="images fade">
-      <img src="./images/sazin1.jpeg" alt="写真1" />
-      <img src="./images/sazin3.jpeg" alt="写真2" />
+      <img src="./images/sazin1.jpeg" alt="韓国での木元さんの写真1" />
+      <img src="./images/sazin3.jpeg" alt="韓国での木元さんの写真2" />
     </div>
   </div>
 
   <div class="section contact" id="contact">
     <h2 class="fade">お問い合わせ</h2>
-    <form id="contactForm" class="fade">
-      <input type="text" placeholder="お名前" required />
-      <input type="email" placeholder="メールアドレス" required />
-      <textarea placeholder="メッセージをどうぞ" required></textarea>
+    <form id="contactForm" class="fade" novalidate>
+      <input type="text" name="username" placeholder="お名前" required />
+      <input type="email" name="email" placeholder="メールアドレス" required />
+      <textarea name="message" placeholder="メッセージをどうぞ" required></textarea>
       <button type="submit">送信</button>
+      <p class="form-feedback" aria-live="polite"></p>
     </form>
   </div>
-  <script src="./script.js" defer></script>
+
+  <!-- 마우스트레일 캔버스 -->
+  <canvas id="cursorCanvas"></canvas>
 
 </body>
 </html>
