@@ -133,3 +133,4 @@ form.addEventListener('submit', e => {
     form.reset();
   }, 1000);
 });
+
