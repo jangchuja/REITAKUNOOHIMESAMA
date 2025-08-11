@@ -23,7 +23,7 @@ body {
 
 .team-name {
   font-size: 1.5rem;
-  color: #7e7e7e;
+  color: #3e2723;
   letter-spacing: 2px;
   opacity: 0.8;
   cursor: pointer;
@@ -124,15 +124,15 @@ button:focus {
 /* 오른쪽 커튼 토글 버튼 */
 #curtainToggle {
   position: fixed;
-  top: 20px;
-  right: 20px;
+  bottom: 450px;
+  right: 10px;
   background: transparent;
   border: none;
   cursor: pointer;
   z-index: 11000;
   padding: 0;
-  width: 48px;
-  height: 48px;
+  width: 150px;
+  height: 150px;
 }
 
 #curtainToggle img {
@@ -162,6 +162,7 @@ button:focus {
   overflow-y: auto;
   transform: translateX(0);
   will-change: transform;
+  font-family: 'M PLUS Rounded 1C', sans-serif;
 }
 
 /* 메뉴 리스트 스타일 */
@@ -183,10 +184,22 @@ button:focus {
 #curtainMenu a {
   color: #2e2e2e;
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   display: block;
   padding: 10px 0;
   transition: color 0.3s ease;
+}
+
+#curtainMenu ul li a {
+  color: #2e2e2e;
+  text-decoration: none;
+  font-size: 1.5rem;
+  display: block;
+  padding: 10px 0;
+  transition: background-color 0.3s;
+  
+  /* 원하는 폰트 지정 예시 */
+  font-family: 'M PLUS Rounded 1C', sans-serif;
 }
 
 #curtainMenu a:hover,
