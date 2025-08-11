@@ -7,13 +7,18 @@ body {
   overflow-x: hidden;
 }
 
-/* 팀명 헤더 */
+/* 헤더 */
 .site-header {
-  position: absolute;
+  position: fixed;
   top: 20px;
+  left: 0;
   width: 100%;
   text-align: center;
-  z-index: 10000;
+  z-index: 10001;
+}
+
+.team-link {
+  text-decoration: none;
 }
 
 .team-name {
@@ -21,12 +26,13 @@ body {
   color: #7e7e7e;
   letter-spacing: 2px;
   opacity: 0.8;
+  cursor: pointer;
 }
 
-/* 콘텐츠 섹션 */
+/* 섹션 */
 .section {
   height: 100vh;
-  padding: 0;
+  padding: 0 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -73,6 +79,14 @@ input, textarea {
   border: 1px solid #ccc;
   border-radius: 5px;
   font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #7880ff;
+  box-shadow: 0 0 5px #7880ff;
 }
 
 button {
@@ -82,6 +96,20 @@ button {
   padding: 10px;
   font-weight: bold;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover,
+button:focus {
+  background-color: #454545;
+  outline: none;
+}
+
+/* 폼 피드백 메시지 */
+.form-feedback {
+  color: #d9534f;
+  font-size: 0.9rem;
+  min-height: 1.2rem;
 }
 
 /* 마우스트레일 캔버스 */
@@ -93,77 +121,107 @@ button {
   z-index: 9999;
 }
 
-/* 드롭다운 네비게이션 */
-.dropdown-nav {
+/* 오른쪽 커튼 토글 버튼 */
+#curtainToggle {
   position: fixed;
   top: 20px;
   right: 20px;
-  z-index: 10002;
-}
-
-/* 메뉴 버튼 - “メニュー” 텍스트, 둥근 사각형, 투명 배경, 그림자 제거 */
-.menu-toggle {
   background: transparent;
-  border: 1px solid #aaa;
-  padding: 6px 16px;
-  border-radius: 20px;
+  border: none;
   cursor: pointer;
-  font-size: 1rem;
-  color: #2e2e2e;
-  box-shadow: none;
-  white-space: nowrap;
-  display: inline-block;
-}
-
-/* 드롭다운 메뉴 */
-.dropdown-menu {
-  list-style: none;
-  margin: 10px 0 0;
+  z-index: 11000;
   padding: 0;
-  display: none;
-  background-color: transparent;
-  box-shadow: none;
-  border-radius: 8px;
+  width: 48px;
+  height: 48px;
 }
 
-.dropdown-menu li {
+#curtainToggle img {
+  width: 100%;
+  height: auto;
+  user-select: none;
+  pointer-events: none;
+  animation: handIdle 2s infinite ease-in-out;
+}
+
+@keyframes handIdle {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(5px); }
+}
+
+/* 커튼 메뉴 */
+#curtainMenu {
+  position: fixed;
+  top: 0;
+  right: -300px; /* 초기 화면 밖 */
+  width: 300px;
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+  padding: 60px 20px 20px;
+  z-index: 10999;
+  overflow-y: auto;
+  transform: translateX(0);
+  will-change: transform;
+}
+
+/* 메뉴 리스트 스타일 */
+#curtainMenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#curtainMenu li {
+  margin-bottom: 15px;
   border-bottom: 1px solid #eee;
 }
 
-.dropdown-menu li a {
-  display: block;
-  padding: 10px 20px;
-  text-decoration: none;
-  color: #2e2e2e;
-  font-size: 1rem;
-}
-
-.dropdown-menu li:last-child {
+#curtainMenu li:last-child {
   border-bottom: none;
 }
 
-.dropdown-menu li a:hover {
-  background-color: rgba(255,255,255,0.15);
-}
-
-.site-header {
-  position: fixed;       /* 고정 */
-  top: 20px;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  z-index: 10001;         /* 메뉴보다 약간 낮게 설정해도 OK */
-}
-
-.team-link {
+#curtainMenu a {
+  color: #2e2e2e;
   text-decoration: none;
+  font-size: 1.1rem;
+  display: block;
+  padding: 10px 0;
+  transition: color 0.3s ease;
 }
 
-.team-name {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 1.5rem;
-  color: #7e7e7e;
-  letter-spacing: 2px;
-  opacity: 0.8;
-  cursor: pointer;
+#curtainMenu a:hover,
+#curtainMenu a:focus {
+  color: #7880ff;
+  outline: none;
+}
+
+/* 오버레이 */
+#overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10998;
+  transition: opacity 0.3s ease;
+}
+
+/* fade 애니메이션 기본 스타일 */
+.fade {
+  opacity: 0;
+  transform: translateY(40px);
+  will-change: opacity, transform;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 반응형 */
+@media (max-width: 500px) {
+  #curtainMenu {
+    width: 240px;
+  }
 }
