@@ -238,3 +238,116 @@ button:focus {
     width: 240px;
   }
 }
+
+
+:root{
+  --bg:#f8f3ea;           /* 따뜻한 베이지 */
+  --ink:#2e2e2e;          /* 본문색 */
+  --line:#c9c1b5;         /* 테두리 */
+  --blue:#3a7bd5;         /* 포인트 블루 */
+  --shadow:#b5afa4;       /* 레트로 그림자 */
+}
+
+/* 섹션 안 중앙 배치 유지 */
+.section{
+  min-height: 100vh;
+  padding: 8vh 5vw;
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  gap: 28px; text-align:center;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+/* 인터뷰 래퍼: 카드를 여러 개 배치해도 균형 잡히도록 */
+.interview-wrap{
+  width:min(920px, 100%);
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+/* 기본 카드: 레트로 창문 느낌(살짝 튀어나온 박스+점선) */
+.card{
+  background:#fff;
+  border:2px solid var(--line);
+  border-radius:14px;
+  box-shadow: 6px 6px 0 var(--shadow);
+  text-align:left;            /* 내용은 좌측 정렬, 박스 자체는 중앙 */
+  padding:20px 22px;
+}
+
+/* 카드 상단 라벨(작은 탭) */
+.card .label{
+  display:inline-block;
+  font-size:12px;
+  letter-spacing:.08em;
+  color:#59606b;
+  background:#f3efe7;
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:4px 10px;
+  margin-bottom:10px;
+}
+
+/* Q/A 스타일 */
+.qa{
+  display:grid; gap:10px;
+}
+.qa .q{
+  font-weight:700;
+  font-size:1.05rem;
+}
+.qa .q::before{
+  content:"Q";
+  display:inline-grid; place-items:center;
+  width:22px; height:22px; margin-right:8px;
+  border:1px solid var(--blue);
+  color:var(--blue);
+  border-radius:6px;
+  font-size:.9rem;
+}
+.qa .a{
+  line-height:1.85;
+  color:#494949;
+}
+.qa .a::before{
+  content:"A";
+  display:inline-grid; place-items:center;
+  width:22px; height:22px; margin-right:8px;
+  border:1px solid #9aa6b2;
+  color:#6b7280;
+  border-radius:6px;
+  font-size:.9rem;
+}
+
+/* 말풍선 변형(원하면 Q/A 중 A에 사용) */
+.bubble{
+  position:relative;
+  background:#fefdfb;
+  border:2px dotted var(--line);
+  border-radius:16px;
+  padding:16px 18px;
+}
+.bubble:after{
+  content:"";
+  position:absolute;
+  left:24px; bottom:-10px;
+  width:16px; height:16px; rotate:45deg;
+  background:#fefdfb;
+  border-right:2px dotted var(--line);
+  border-bottom:2px dotted var(--line);
+}
+
+/* 살짝 상호작용(모바일도 안전) */
+.card:hover{ transform: translateY(-2px); }
+.card{ transition: transform .15s ease; }
+
+
+
+/* 모바일 여백 조정 */
+@media (max-width:640px){
+  .section{ padding: 7vh 4vw; }
+  .card{ padding:16px 18px; }
+}
+
