@@ -246,7 +246,7 @@ button:focus {
 
 
 :root{
-  --bg:#f8f3ea;           /* 따뜻한 베이지 */
+  --bg:#fdfaf6;           /* 따뜻한 베이지 */
   --ink:#2e2e2e;          /* 본문색 */
   --line:#c9c1b5;         /* 테두리 */
   --blue:#3a7bd5;         /* 포인트 블루 */
@@ -451,3 +451,4 @@ position: absolute;
     width: 90%;
   }
 }
+
