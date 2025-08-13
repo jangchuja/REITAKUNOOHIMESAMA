@@ -125,7 +125,7 @@ button:focus {
 #curtainToggle {
   position: fixed;
   bottom: 450px;
-  right: 10px;
+  right: -25px;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -152,18 +152,23 @@ button:focus {
 #curtainMenu {
   position: fixed;
   top: 0;
-  right: -300px; /* 초기 화면 밖 */
+  right: -300px;
   width: 300px;
   height: 100vh;
   background-color: #fff;
   box-shadow: -5px 0 15px rgba(0,0,0,0.3);
-  padding: 60px 20px 20px;
   z-index: 10999;
   overflow-y: auto;
   transform: translateX(0);
   will-change: transform;
   font-family: 'M PLUS Rounded 1C', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;      
+  padding: 0;               
 }
+
 
 /* 메뉴 리스트 스타일 */
 #curtainMenu ul {
@@ -186,7 +191,7 @@ button:focus {
   text-decoration: none;
   font-size: 1.5rem;
   display: block;
-  padding: 10px 0;
+  padding: 15px 0;
   transition: color 0.3s ease;
 }
 
@@ -351,3 +356,98 @@ button:focus {
   .card{ padding:16px 18px; }
 }
 
+.team-footer {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.1rem;
+  font-weight: 700; /* 굵게 */
+  font-family: 'M PLUS Rounded 1C', sans-serif; /* 감성 있는 서체 */
+  color: #92630b;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  z-index: 10001;
+}
+
+.card-container {
+position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+
+  padding: 20px;
+
+}
+
+.id-card {
+  width: 280px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  padding: 20px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.id-card:hover {
+  transform: scale(1.05);
+}
+.id-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  font-family: 'Noto Sans KR', sans-serif;
+  color: #333;
+
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  max-width: 500px;
+  width: 90%;
+  border-radius: 10px;
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.close {
+  position: absolute;
+  top: 10px; right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .id-card {
+    width: 90%;
+  }
+}
