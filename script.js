@@ -134,3 +134,72 @@ form.addEventListener('submit', e => {
   }, 1000);
 });
 
+let footer = document.querySelector('.team-footer');
+
+let scrollTimeout;
+
+window.addEventListener('scroll', () => {
+
+   gsap.to(footer, {
+  opacity: 0,
+  duration: 0.15,
+  onComplete: () => {
+    footer.style.visibility = 'hidden';
+  }
+});
+
+
+  clearTimeout(scrollTimeout);
+
+  scrollTimeout = setTimeout(() => {
+  gsap.to(footer, {
+    opacity: 1,
+    duration: 0.3,
+    onStart: () => {
+      footer.style.visibility = 'visible';
+    }
+  });
+}, 300);
+
+});
+
+function openModal(personId) {
+  const details = {
+    person1: `
+      <img src="images/sazin3.jpeg" alt="장소윤" style="width:120px; border-radius:12%; box-shadow: 0 4px 12px rgba(0, 0, 0, 9)">
+      <h2>장소윤</h2>
+      <p>개발자, React 전문가</p>
+      <p>📧 hong@example.com</p>
+      <p>💼 GitHub: <a href="#">github.com/hong</a></p>
+      <p>🎯 취미: 등산, 커피 탐방</p>
+    `,
+    person2: `
+       <img src="images/sazin3.jpeg" alt="장태원" style="width:120px; border-radius:12%; box-shadow: 0 4px 12px rgba(0, 0, 0, 9)">
+      <h2>장태원</h2>
+      <p>UI/UX 디자이너, Figma 마스터</p>
+      <p>📧 kim@example.com</p>
+      <p>💼 GitHub: <a href="#">https://github.com/jangchuja</a></p>
+      <p>🎯 취미: 사진, 전시회 관람</p>
+    `,
+    person3: `
+       <img src="images/sazin3.jpeg" alt="최부권" style="width:120px; border-radius:12%; box-shadow: 0 4px 12px rgba(0, 0, 0, 9)">
+      <h2>최부권</h2>
+      <p>기획자, 전략 설계 담당</p>
+      <p>📧 lee@example.com</p>
+      <p>💼 LinkedIn: <a href="#">linkedin.com/in/lee</a></p>
+      <p>🎯 취미: 독서, 보드게임</p>
+    `
+  };
+  document.getElementById("modalDetails").innerHTML = details[personId];
+  document.getElementById("modal").style.display = "flex";
+}
+
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+}
+
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    window.scrollTo(0, 0);
+  }, 0);
+});
