@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>麗澤のお姫様</title>
+  <link rel="icon" href="./images/favicon.ico" type="image/ico" />
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1C&display=swap" rel="stylesheet" />
-  <title>木元さんの物語</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&family=Noto+Sans+KR&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./style.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
   <script src="./script.js" defer></script>
-  
 </head>
 <body>
 
@@ -20,57 +21,64 @@
     </a>
   </header>
 
-  <!-- 오른쪽 커튼 토글 버튼 -->
+  <!-- 커튼 토글 버튼 -->
   <button id="curtainToggle" aria-expanded="false" aria-label="メニューを開く">
     <img src="images/123.png" alt="커튼을 끄는 캐릭터 손" />
   </button>
 
   <!-- 커튼 메뉴 -->
-  <nav id="curtainMenu" aria-hidden="true" role="navigation" aria-label="메뉴">
+  <nav id="curtainMenu" aria-hidden="true" role="navigation" aria-label="メニュー">
     <ul>
-      <li><a href="./yakkyou.html">역경 逆境</a></li>
+      <li><a href="./shoukai.html">소개 紹介</a></li>
       <li><a href="./korea.html">한국 韓国</a></li>
       <li><a href="./kaisha.html">회사 会社</a></li>
-      <li><a href="./kazoku.html">가족 家族</a></li>
+      <li><a href="./kazoku.html">감상 感想</a></li>
     </ul>
   </nav>
 
-  <!-- 메뉴 오버레이 -->
+  <!-- 오버레이 -->
   <div id="overlay" tabindex="-1"></div>
 
   <!-- 메인 콘텐츠 -->
-  <div class="section hero" id="hero">
-    <h1 class="fade">静かに、でも確かに。</h1>
-    <p class="fade">足跡のように残る、あなたの物語。</p>
-  </div>
+  <main>
+    <section class="section hero">
+      <h1 class="fade">静かに、でも確かに。</h1>
+      <p class="fade">足跡のように残る、あなたの物語。</p>
+    </section>
 
-  <div class="section about" id="about">
-    <h2 class="fade">木元さんについて</h2>
-    <p class="fade">韓国で活躍する日本人として、日々の営みと出会いを大切にしています。</p>
-  </div>
+    <section class="section about">
+      <h2 class="fade">木元さんについて</h2>
+      <p class="fade">韓国で活躍する日本人として、日々の営みと出会いを大切にしています。</p>
+    </section>
 
-  <div class="section gallery" id="gallery">
-    <h2 class="fade">最終章</h2>
-    <div class="images fade">
-      <img src="./images/sazin1.jpeg" alt="韓国での木元さんの写真1" />
-      <img src="./images/sazin3.jpeg" alt="韓国での木元さんの写真2" />
-    </div>
-  </div>
+    <section class="section gallery">
+      <h2 class="fade">最終章</h2>
+      <div class="images fade">
+        <img src="./images/sazin1.jpeg" alt="韓国での木元さんの写真1" />
+        <img src="./images/sazin3.jpeg" alt="韓国での木元さんの写真2" />
+      </div>
+    </section>
 
-  <div class="section contact" id="contact">
-    <h2 class="fade">お問い合わせ</h2>
-    <form id="contactForm" class="fade" novalidate>
-      <input type="text" name="username" placeholder="お名前" required />
-      <input type="email" name="email" placeholder="メールアドレス" required />
-      <textarea name="message" placeholder="メッセージをどうぞ" required></textarea>
-      <button type="submit">送信</button>
-      <p class="form-feedback" aria-live="polite"></p>
-    </form>
-  </div>
+   
+
+    <!-- 폼 섹션 -->
+    <section class="section">
+      <h2>お問い合わせ</h2>
+      <form id="contactForm">
+        <input type="text" name="name" placeholder="お名前" required />
+        <input type="email" name="email" placeholder="メールアドレス" required />
+        <textarea name="message" rows="5" placeholder="メッセージ" required></textarea>
+        <button type="submit">送信</button>
+        <div class="form-feedback"></div>
+      </form>
+    </section>
+  </main>
 
   <!-- 마우스트레일 캔버스 -->
   <canvas id="cursorCanvas"></canvas>
 
+  <!-- 푸터 -->
+  <footer class="team-footer">麗澤のお姫様</footer>
+
 </body>
 </html>
-
