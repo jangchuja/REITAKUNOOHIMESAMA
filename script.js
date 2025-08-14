@@ -178,26 +178,26 @@ function openModal(personId) {
   const profiles = {
     person1: {
       name: "장소윤",
-      role: "張蘇允　チャンソユン",
-      email: "kwala9@naver.com",
-      github: "https://github.com/kwala9",
-      hobby: "베이킹",
+      role: "개발자, React 전문가",
+      email: "hong@example.com",
+      github: "github.com/hong",
+      hobby: "등산, 커피 탐방",
       image: "images/JSY.jpg"
     },
     person2: {
       name: "장태원",
-      role: "張泰元　チャンテウォン",
+      role: "UI/UX 디자이너, Figma 마스터",
       email: "jto000040@gmail.com",
       github: "https://github.com/jangchuja",
-      hobby: "러닝",
+      hobby: "사진, 전시회 관람",
       image: "images/JTW.jpg"
     },
     person3: {
       name: "최부권",
-      role: "崔傅棬　チェブグォン",
-      email: "stitch4324@gmail.com",
+      role: "기획자, 전략 설계 담당",
+      email: "lee@example.com",
       github: "linkedin.com/in/lee",
-      hobby: "애니 감상",
+      hobby: "독서, 보드게임",
       image: "images/CBG.jpg"
     }
   };
@@ -241,6 +241,3 @@ window.addEventListener('load', () => {
     window.scrollTo(0, 0);
   }, 0);
 });
-
-
-
