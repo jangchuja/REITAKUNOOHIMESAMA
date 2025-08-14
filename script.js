@@ -59,7 +59,7 @@ function animate() {
 
     ctx.beginPath();
     ctx.arc(p.x, p.y, 6 * p.alpha, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(120, 160, 255, ${p.alpha})`;
+    ctx.fillStyle = `hsla(40, 60%, 70%, ${p.alpha})`; // 따뜻한 노란빛
     ctx.fill();
   });
 
@@ -71,17 +71,26 @@ animate();
 const toggleBtn = document.getElementById('curtainToggle');
 const menu = document.getElementById('curtainMenu');
 const overlay = document.getElementById('overlay');
+const menuItems = menu.querySelectorAll('ul li a');
 
 let isOpen = false;
 
 function openMenu() {
-  // 메뉴 오른쪽에서 왼쪽으로 슬라이드 인
+  // 메뉴 슬라이드 인
   gsap.to(menu, { x: '-300px', duration: 0.8, ease: "power3.out" });
 
-  // 캐릭터 버튼도 메뉴 왼쪽 경계에 딱 붙도록 이동
+  // 너구리 버튼 슬라이드 인
   gsap.to(toggleBtn, { x: -300, duration: 0.8, ease: "power3.out" });
 
+  // 오버레이 활성화
   gsap.to(overlay, { opacity: 1, pointerEvents: 'auto', duration: 0.5 });
+
+  // 메뉴 항목 스태거 애니메이션: 아래에서 올라오며 페이드 인
+  gsap.fromTo(menuItems, 
+    { y: 20, opacity: 0 },
+    { y: 0, opacity: 1, duration: 0.5, stagger: 0.1, ease: "power3.out", delay: 0.3 }
+  );
+
   toggleBtn.setAttribute('aria-expanded', 'true');
   menu.setAttribute('aria-hidden', 'false');
   isOpen = true;
@@ -99,7 +108,6 @@ function closeMenu() {
   menu.setAttribute('aria-hidden', 'true');
   isOpen = false;
 }
-
 
 toggleBtn.addEventListener('click', () => {
   if (isOpen) closeMenu();
@@ -164,38 +172,68 @@ window.addEventListener('scroll', () => {
 });
 
 function openModal(personId) {
-  const details = {
-    person1: `
-      <img src="images/sazin3.jpeg" alt="장소윤" style="width:120px; border-radius:12%; box-shadow: 0 4px 12px rgba(0, 0, 0, 9)">
-      <h2>장소윤</h2>
-      <p>개발자, React 전문가</p>
-      <p>📧 hong@example.com</p>
-      <p>💼 GitHub: <a href="#">github.com/hong</a></p>
-      <p>🎯 취미: 등산, 커피 탐방</p>
-    `,
-    person2: `
-       <img src="images/sazin3.jpeg" alt="장태원" style="width:120px; border-radius:12%; box-shadow: 0 4px 12px rgba(0, 0, 0, 9)">
-      <h2>장태원</h2>
-      <p>UI/UX 디자이너, Figma 마스터</p>
-      <p>📧 kim@example.com</p>
-      <p>💼 GitHub: <a href="#">https://github.com/jangchuja</a></p>
-      <p>🎯 취미: 사진, 전시회 관람</p>
-    `,
-    person3: `
-       <img src="images/sazin3.jpeg" alt="최부권" style="width:120px; border-radius:12%; box-shadow: 0 4px 12px rgba(0, 0, 0, 9)">
-      <h2>최부권</h2>
-      <p>기획자, 전략 설계 담당</p>
-      <p>📧 lee@example.com</p>
-      <p>💼 LinkedIn: <a href="#">linkedin.com/in/lee</a></p>
-      <p>🎯 취미: 독서, 보드게임</p>
-    `
+  const modal = document.getElementById("modal");
+  const modalDetails = document.getElementById("modalDetails");
+
+  const profiles = {
+    person1: {
+      name: "장소윤",
+      role: "개발자, React 전문가",
+      email: "hong@example.com",
+      github: "github.com/hong",
+      hobby: "등산, 커피 탐방",
+      image: "images/JSY.jpg"
+    },
+    person2: {
+      name: "장태원",
+      role: "UI/UX 디자이너, Figma 마스터",
+      email: "kim@example.com",
+      github: "https://github.com/jangchuja",
+      hobby: "사진, 전시회 관람",
+      image: "images/JTW.jpg"
+    },
+    person3: {
+      name: "최부권",
+      role: "기획자, 전략 설계 담당",
+      email: "lee@example.com",
+      github: "linkedin.com/in/lee",
+      hobby: "독서, 보드게임",
+      image: "images/CBG.jpg"
+    }
   };
-  document.getElementById("modalDetails").innerHTML = details[personId];
-  document.getElementById("modal").style.display = "flex";
+
+  const person = profiles[personId];
+  if (!person || !modal || !modalDetails) return;
+
+  modalDetails.innerHTML = `
+    <div class="card-layout">
+      <div class="card-left">
+        <img src="${person.image}" alt="${person.name}" />
+      </div>
+      <div class="card-right">
+        <h2>${person.name}</h2>
+        <p>${person.role}</p>
+        <p>📧 ${person.email}</p>
+        <p>💼 <a href="#">${person.github}</a></p>
+        <p>🎯 취미: ${person.hobby}</p>
+      </div>
+    </div>
+  `;
+
+  modal.style.display = "flex";
+  setTimeout(() => {
+    modal.style.opacity = "1";
+  }, 10);
 }
 
 function closeModal() {
-  document.getElementById("modal").style.display = "none";
+  const modal = document.getElementById("modal");
+  if (modal) {
+    modal.style.opacity = "0";
+    setTimeout(() => {
+      modal.style.display = "none";
+    }, 300);
+  }
 }
 
 window.addEventListener('load', () => {
