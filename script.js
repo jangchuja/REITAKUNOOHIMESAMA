@@ -178,26 +178,26 @@ function openModal(personId) {
   const profiles = {
     person1: {
       name: "장소윤",
-      role: "개발자, React 전문가",
-      email: "hong@example.com",
-      github: "github.com/hong",
-      hobby: "등산, 커피 탐방",
+      role: "일본어융합학부",
+      email: "kwala9@naver.com",
+      github: "https://github.com/kwala9",
+      hobby: "베이킹",
       image: "images/JSY.jpg"
     },
     person2: {
       name: "장태원",
-      role: "UI/UX 디자이너, Figma 마스터",
-      email: "kim@example.com",
+      role: "스페인어학과",
+      email: "jto000040@gmail.com",
       github: "https://github.com/jangchuja",
-      hobby: "사진, 전시회 관람",
+      hobby: "러닝",
       image: "images/JTW.jpg"
     },
     person3: {
       name: "최부권",
-      role: "기획자, 전략 설계 담당",
-      email: "lee@example.com",
+      role: "일본어융합학부",
+      email: "stitch4324@gmail.com",
       github: "linkedin.com/in/lee",
-      hobby: "독서, 보드게임",
+      hobby: "애니 감상",
       image: "images/CBG.jpg"
     }
   };
@@ -241,3 +241,4 @@ window.addEventListener('load', () => {
     window.scrollTo(0, 0);
   }, 0);
 });
+
