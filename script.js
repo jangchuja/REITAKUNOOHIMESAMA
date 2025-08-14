@@ -186,7 +186,7 @@ function openModal(personId) {
     },
     person2: {
       name: "장태원",
-      role: "스페인어학과",
+      role: "張泰元　チャンテウォン",
       email: "jto000040@gmail.com",
       github: "https://github.com/jangchuja",
       hobby: "러닝",
@@ -194,7 +194,7 @@ function openModal(personId) {
     },
     person3: {
       name: "최부권",
-      role: "일본어융합학부",
+      role: "崔傅棬　チェブグォン",
       email: "stitch4324@gmail.com",
       github: "linkedin.com/in/lee",
       hobby: "애니 감상",
@@ -241,5 +241,6 @@ window.addEventListener('load', () => {
     window.scrollTo(0, 0);
   }, 0);
 });
+
 
 
