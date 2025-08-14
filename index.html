@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1C&display=swap" rel="stylesheet" />
   <title>麗澤のお姫様</title>
+  <link rel="stylesheet" href="./style.css" /><!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1C&display=swap" rel="stylesheet" />
+  <title>麗澤のお姫様</title>
   <link rel="stylesheet" href="./style.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
@@ -99,3 +106,97 @@
 
 </body>
 </html>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+  <script src="./script.js" defer></script>
+  <link rel="icon" href="./images/favicon.ico" type="image/ico" />
+  
+
+  </head>
+<body>
+
+
+  <header class="site-header">
+    <a href="./index.html" class="team-link">
+      <h1 class="team-name">麗澤のお姫様</h1>
+    </a>
+  </header>
+
+  <!-- 커튼 토글 버튼 -->
+  <button id="curtainToggle" aria-expanded="false" aria-label="メニューを開く">
+    <img src="images/123.png" alt="커튼을 끄는 캐릭터 손" />
+  </button>
+
+  <!-- 커튼 메뉴 -->
+  <nav id="curtainMenu" aria-hidden="true" role="navigation" aria-label="メニュー">
+    <ul>
+      <li><a href="./shoukai.html">소개 紹介</a></li>
+      <li><a href="./korea.html">한국 韓国</a></li>
+      <li><a href="./kaisha.html">회사 会社</a></li>
+      <li><a href="./kazoku.html">감상 感想</a></li>
+    </ul>
+  </nav>
+
+  <!-- 오버레이 -->
+  <div id="overlay" tabindex="-1"></div>
+
+  <!-- 메인 콘텐츠 -->
+  <main>
+    <section class="section hero">
+      <div class="hero-content">
+      <h1 class="fade">我々は、</h1>
+      <p class="fade">品川リフラクトリーズ韓国株式会社の代表取締役社長　木元立彦様とインタビューを行い、
+       木元様とのインタビューから得られた情報を持ってWEBページを制作してみました。
+      </p>
+      
+      </div>
+    </section>
+
+     <section class="section hero">
+      <div class="hero-content">
+      <h1 class="fade">私たちのタイトルは、</h1>
+         <p class="fade">
+     木元さんのこれまでの様々な国での生活経験談は、来年から海外生活を始める私たちにとって、事前に海外生活を垣間見る貴重な機会となりました。
+    </p>
+  </div>
+</section>
+
+ <section class="section hero">
+      <div class="hero-content">
+      <h1 class="fade">私たちのページは、</h1>
+         <p class="fade">
+     上記のような思いを込めて、同じように海外生活をする私たちが、どんな気持ちで臨めばいいのかについて、木元さんからのアドバイスをQ&A形式でまとめました。
+     </p>     
+     <p class="fade">
+     これから長くても短くても海外生活をする清海進仲間の皆さんの助けになれば嬉しいです。
+    </p>
+  </div>
+</section>
+
+
+<section class="section gallery">
+  <div class="gallery-content">
+    <h2 class="fade">インタビュー</h2>
+    <div class="images fade">
+      <a href="korea.html">
+        <img src="./images/sazin1.jpeg" alt="韓国での木元さんの写真1" />
+      </a>
+      <a href="korea.html">
+        <img src="./images/sazin3.jpeg" alt="韓国での木元さんの写真2" />
+      </a>
+    </div>
+  </div>
+</section>
+
+    
+  </main>
+
+  <!-- 마우스트레일 캔버스 -->
+  <canvas id="cursorCanvas"></canvas>
+
+  <!-- 푸터 -->
+  <footer class="team-footer">麗澤のお姫様</footer>
+
+</body>
+</html>
+
