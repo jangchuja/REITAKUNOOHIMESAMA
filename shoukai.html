@@ -3,25 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1C&display=swap" rel="stylesheet" />
   <title>麗澤のお姫様</title>
+  <link rel="icon" href="./images/favicon.ico" type="image/ico" />
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1C&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./style.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
   <script src="./script.js" defer></script>
-  <link rel="icon" href="./images/favicon.ico" type="image/ico" />
-  
 </head>
 <body>
+
+  <!-- 헤더 -->
   <header class="site-header">
     <a href="./index.html" class="team-link">
       <h1 class="team-name">麗澤のお姫様</h1>
     </a>
   </header>
 
-  <!-- 기존 dropdown-nav 제거 -->
-
-  <!-- 오른쪽 커튼 토글 버튼 -->
+  <!-- 커튼 토글 버튼 -->
   <button id="curtainToggle" aria-expanded="false" aria-label="メニューを開く">
     <img src="images/123.png" alt="커튼을 끄는 캐릭터 손" />
   </button>
@@ -29,7 +28,7 @@
   <!-- 커튼 메뉴 -->
   <nav id="curtainMenu" aria-hidden="true" role="navigation" aria-label="メニュー">
     <ul>
-     <li><a href="./shoukai.html">소개 紹介</a></li>
+      <li><a href="./shoukai.html">소개 紹介</a></li>
       <li><a href="./korea.html">한국 韓国</a></li>
       <li><a href="./kaisha.html">회사 会社</a></li>
       <li><a href="./kazoku.html">감상 感想</a></li>
@@ -39,42 +38,40 @@
   <!-- 메뉴 오버레이 -->
   <div id="overlay" tabindex="-1"></div>
 
+  <!-- 마우스트레일 캔버스 -->
   <canvas id="cursorCanvas"></canvas>
 
- <div class="card-container">
-  <div class="id-card" onclick="openModal('person1')">
-    <img src="images/sazin3.jpeg" alt="장소윤">
-    <h3>장소윤</h3>
-    <p>장소윤</p>
+  <!-- 카드 섹션 -->
+  <div class="card-container">
+    <div class="id-card" onclick="openModal('person1')">
+      <img src="images/JSY.jpg" alt="장소윤">
+      <h3>장소윤</h3>
+      <p>장소윤</p>
+    </div>
+    <div class="id-card" onclick="openModal('person2')">
+      <img src="images/JTW.jpg" alt="장태원">
+      <h3>장태원</h3>
+      <p>장태원</p>
+    </div>
+    <div class="id-card" onclick="openModal('person3')">
+      <img src="images/CBG.jpg" alt="최부권">
+      <h3>최부권</h3>
+      <p>최부권</p>
+    </div>
   </div>
-  <div class="id-card" onclick="openModal('person2')">
-    <img src="images/sazin3.jpeg" alt="장태원">
-    <h3>장태원</h3>
-    <p>장태원</p>
-  </div>
-  <div class="id-card" onclick="openModal('person3')">
-    <img src="images/sazin3.jpeg" alt="최부권">
-    <h3>최부권</h3>
-    <p>최부권</p>
-  </div>
-</div>
 
-<!-- 모달 -->
-<div id="modal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <div id="modalDetails"></div>
+  <!-- 모달 (하나로 통합 + 카드 형식 적용) -->
+  <div id="modal" class="modal">
+    <div class="modal-content card-layout">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div id="modalDetails"></div>
+    </div>
   </div>
-</div>
 
-<!-- 모달 -->
-<div id="modal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <div id="modalDetails"></div>
-  </div>
-</div>
-<footer class="team-footer">
-  <p>麗澤のお姫様</p>
-</footer>
+  <!-- 푸터 -->
+  <footer class="team-footer">
+    <p>麗澤のお姫様</p>
+  </footer>
+
+</body>
 </html>
