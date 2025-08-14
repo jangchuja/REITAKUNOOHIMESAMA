@@ -178,7 +178,7 @@ function openModal(personId) {
   const profiles = {
     person1: {
       name: "장소윤",
-      role: "일본어융합학부",
+      role: "張蘇允　チャンソユン",
       email: "kwala9@naver.com",
       github: "https://github.com/kwala9",
       hobby: "베이킹",
@@ -241,4 +241,5 @@ window.addEventListener('load', () => {
     window.scrollTo(0, 0);
   }, 0);
 });
+
 
