@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1C&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap" rel="stylesheet">
+
   <title>麗澤のお姫様</title>
   <link rel="stylesheet" href="./style.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
   <script src="./script.js" defer></script>
   <link rel="icon" href="./images/favicon.ico" type="image/ico" />
+  
   
 </head>
 <body>
@@ -30,9 +32,9 @@
   <!-- 커튼 메뉴 -->
   <nav id="curtainMenu" aria-hidden="true" role="navigation" aria-label="メニュー">
     <ul>
-     <li><a href="./shoukai.html">소개 紹介</a></li>
       <li><a href="./korea.html">한국 韓国</a></li>
       <li><a href="./kaisha.html">회사 会社</a></li>
+     <li><a href="./shoukai.html">소개 紹介</a></li>
       <li><a href="./kazoku.html">감상 感想</a></li>
     </ul>
   </nav>
@@ -43,18 +45,216 @@
   <!-- 마우스 트레일 캔버스 -->
   <canvas id="cursorCanvas"></canvas>
 
-  <!-- 메인 콘텐츠 -->
-  <div class="section hero" id="hero">
-    <h1 class="fade">心を重ねた異国での日々。</h1>
-    <p class="fade">韓国という地で育まれた出会いと感情が、物語のページを彩ります。</p>
-  </div>
+<aside class="sidebar">
+  <ul>
+    <li><a href="#self-intro" class="active">自己紹介</a></li>
+    <li><a href="#kikkake">きっかけ</a></li>
+    <li><a href="#fuan">不安</a></li>
+    <li><a href="#ryouri">料理</a></li>
+    <li><a href="#nihon">日本</a></li>
+    <li><a href="#stress">ストレス解消法</a></li>
+    <li><a href="#workflow">1日の業務の流れ</a></li>
+    <li><a href="#golf">ゴルフ</a></li>
+    <li><a href="#angry">怒るタイプ</a></li>
+    <li><a href="#episode">エピソード</a></li>
+  </ul>
+</aside>
 
-  <div class="section about" id="about">
-    <h2 class="fade">韓国での経験</h2>
-    <p class="fade">文化、言葉、人。すべてが新しく、すべてが温かい。木元さんがこの地で紡いだ日々は、静かに輝きを放っています。</p>
+  
+<div class="section" id="interview">
+
+    <div class="interview-wrap">
+   <main>
+
+<!-- 본문 -->
+<article id="self-intro" class="card fade">
+  <span class="label">自己紹介</span>
+  <div class="qa">
+    <div class="q">名前、所属、年齢、家族構成、簡単に自己紹介</div>
+    <div class="a bubble">
+      私の名前は木元立彦です。現在は韓国のキョンサンブクのトポハン市にある品川リフラクトリーズという日本の会社で勤務してます。品川リフラクトリーズは1875年、今から150年前に日本の東京で設立されました。今年がちょうど150年目に当たります。韓国には今から3年前、2022年に新しく設立されました。私は1971年生まれ、日本で言うと54歳になります。自宅は日本の埼玉県の浦和市ですね。サッカーが有名な浦和レッズがあるところです。家族は私のワイフと私の娘1人、3人になりまして、今は家族と離れて住んでいます。
+    </div>
   </div>
-</body>
-<footer class="team-footer">
-  <p>麗澤のお姫様</p>
-</footer>
+</article>
+
+
+      
+      <!-- 기존 카드 1 -->
+<article id="kikkake" class="card fade">
+        <span class="label">きっかけ</span>
+        <div class="qa">
+          <div class="q">韓国に来たきっかけとかありますか。</div>
+          <div class="a bubble">元々私は日本の東京の本社で海外向けの営業や海外パートナーの管理などの仕事をしました。私はこれまで海外の会社を作ったり、
+          経営をコンサルティングをした経験があったので、その経験を生かして韓国で新しい会社を作るために私が任命されました。3年前に来て
+          0から会社を作って、韓国のいろんな政府や銀行、市役所に行ったり手続きをして、この会社を作りました。
+          </div>
+        </div>
+      </article>
+
+      <!-- 기존 카드 2 -->
+ <article id="fuan" class="card fade">
+        <span class="label">不安</span>
+        <div class="qa">
+          <div class="q">木元さんは韓国に1人で来るっていうこと自体に不安はなかったですか？ご家族や友人の方々は全員日本にいらっしゃると思いますが…</div>
+          <div class="a bubble">
+            まず、私は今から33年前に入社しましたが、1番最初に担当した国が韓国でした。今から33年前、韓国にもよく出張で来ましたし
+            韓国の方ともたくさん話をする機会がありましたので友達もたくさんいます。それと、2001年から2007年までカナダのトロントに仕事でいまして、
+            そこでたくさん韓国人の方がいまして、知り合うことができました。私のワイフも娘も韓国のドラマとかk-pop大好きですから
+            私も非常に韓国に親しみを持ってますので、韓国に来ても全く問題ありませんでした。
+          </div>
+        </div>
+      </article>
+
+      <!-- 질문 카드 추가 -->
+      <article id="ryouri" class="card fade">
+        <span class="label">料理</span>
+        <div class="qa">
+          <div class="q">料理の方は大丈夫でしたか？私も日本で住んだことがあって、日本の料理しょっぱいなと思ったことがありまして。木元さんは韓国の料理の方は大丈夫でしたか。</div>
+          <div class="a bubble"> 最初少し辛いと思ったですけども、辛いのはもう慣れました。全然問題ないです。</div>
+        </div>
+      </article>
+
+      <article id="nihon" class="card fade">
+        <span class="label">日本</span>
+        <div class="qa">
+          <div class="q">木元さんは日本に帰国する計画とかありますか。</div>
+          <div class="a bubble">あります。この会社が韓国人のスタッフだけで経営できるようになったら、私は日本に帰ってまた違う国に行くと思います。また0から同じような感じで。5年以内。早くなるかもしれませんし、5年以上になるかもしれません。それはわかりません。</div>
+      </article>
+
+      <article id="stress" class="card fade">
+        <span class="label">ストレス解消法</span>
+        <div class="qa">
+          <div class="q">木元さんのそのストレス発散方法は何ですか？</div>
+          <div class="a bubble">会社の従業員と一緒にご飯を食べて、カラオケ行ったり、お酒飲んだりするのが楽しいですね。お酒を飲んだら普段仕事で言えないところとか、悩み事を話せるよウニなるから、そこで従業員と色々話したりしますしのでそれがストレス解消です。</div>
+
+            <div class="a bubble">あとは、旅行に行くようにしてます。例えばこの間も東海線に乗ってポハンから江原道、束草あたりまで行きました。１人で旅行をすると非常に色々なものが見れると思います。多様な人に会ったり、様々な経験をしたら楽しいですね。</div>
+        </div>
+      </article>
+
+      <article id="workflow" class="card fade">
+        <span class="label">1日の業務の流れ</span>
+        <div class="qa">
+          <div class="q">木元さんの1日の業務の流れを教えてください。</div>
+          <div class="a bubble">朝起きて日本のニュースをチェックします。なぜなら、家族が日本に住んでいるので、埼玉は今日も無事かなとか地震がないかなと心配ですね。その後ご飯を食べて、30分ぐらい歩いて会社に行きます。そして歩きながら今日はどういう仕事をするか、どのような人と会うかなどを考えます。9時から18時まで仕事の時間ですが、その間には従業員の進行状況を確認したり、お客さんと話したり日本の本社に韓国の状況をほ刻したりします。</div>
+          <div class="a bubble">それからお客さんのところに行って今我々の製品を説明するのでそれが問題ないかとか、何かリクエストがあればヒアリングします。そうすると、もうすぐに終業時間の6時になって帰るようにしてます。</div>
+        </div>
+      </article>
+
+      <article id="golf" class="card fade">
+        <span class="label">ゴルフ</span>
+        <div class="qa">
+          <div class="q">ゴルフはいつ、どのタイミングでよくプレイしに行くのかがちょっと気になります。</div>
+          <div class="a bubble">はい、まず1つは、日本人会ですね。永野先生みたいな感じで、ゴルフ好きな方がたくさんいらっしゃいますので、そういう方と週末チャンスがあるのと、それと、やっぱ韓国のお客さんとか韓国、韓国のパートナーの方も、この2人ので、その方たちと一緒に行くことが、今週末もまた行くんですよ、韓国の方と。大邱のあたり。</div>
+        </div>
+      </article>
+
+      <article id="angry" class="card fade">
+        <span class="label">怒るタイプ</span>
+        <div class="qa">
+          <div class="q">怒るタイプって人それぞれじゃないですか。木元さんは怒るタイプがあるのか、あるならどうのタイプなのかがちょっとお聞きしたいです。</div>
+          <div class="a bubble">日本から韓国に来た時はね、やはりちょっと日本と韓国のやり方が違うのでね、最初は少し困りました。例えば韓国の場合、結構約束しても予定が変わったりとか、キャンセルがあったりとかありますよね。最初はね、それで非常にこうストレス感じてまして、こちらに、従業員とかにちょっと色々話して、これはせっかく約束したねと決めたのに、なんでそんな簡単に変わるのかなっていう風に怒ったりは時々してましたけど、もう慣れました。私も韓国人ですから、今半分そういう意味で言うと、もうこちらのやり方が、韓国人のやり方、韓国式がもう理解できるとですね。そんなにこう怒ったりとかすることはなくなりましたね。
+</div>
+        </div>
+      </article>
+
+      <article id="episode" class="card fade">
+        <span class="label">エピソード</span>
+        <div class="qa">
+          <div class="q">韓国で暮らしながら、生活しながら、その1番面白かったエピソードとかありますか。</div>
+          <div class="a bubble">やはり日本は韓国と色々問題があって、韓国の方は日本人が嫌いなんじゃないかと報道がありました。そういうニュースとか、メディアとか。でもこっちに来てむしろ日本人に優しいと思ったことが多いです。外国人は言語から不自由だから、わからないことがあっても日本人ですって言ったら優しく教えてくれたりね。昔には日本人っていうと、日本に帰れって怒られるんじゃないかと思いました。</div>
+
+          <div class="a bubble">何年前には韓国と日本の関係があまりよくない時もありまして、３年前に来た際には本当に心配しました。しかし、実際は全然違いま下値。どこに行っても、特に食堂に行ったらみんな優しい。一人で食堂に行ったらパンをサービスしてくれたり本当に感動しました。</div>
+      </div>
+        </div>
+      </article>
+
+    </main>
+
+<style>
+  body {
+    display: flex;
+    margin: 0;
+    font-family: 'Noto Serif JP', sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 220px;
+    height: calc(100vh - 80px); /* 헤더 높이만큼 빼서 사이드바가 화면 안에서 스크롤 가능 */
+    background: #f5f0e6;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    overflow-y: auto;
+  }
+
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .sidebar li {
+    margin-bottom: 10px;
+  }
+
+  .sidebar a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all 0.3s;
+  }
+
+  .sidebar a.active,
+  .sidebar a:hover {
+    background: #333;
+    color: #fff;
+  }
+
+  main {
+    margin-left: 240px;
+    padding: 20px;
+    flex: 1;
+  }
+
+  article.card {
+    margin-bottom: 50px;
+    padding: 15px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    scroll-margin-top: 100px;
+
+  }
+</style>
+
+<script>
+  // 클릭 시 active 적용
+  const links = document.querySelectorAll('.sidebar a');
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      links.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+    });
+  });
+
+  // 스크롤 시 활성 메뉴 변경
+  window.addEventListener('scroll', () => {
+    const fromTop = window.scrollY + 60; // 상단 보정
+    links.forEach(link => {
+      const section = document.querySelector(link.getAttribute('href'));
+      if(section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop){
+        links.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+
+  </body>
+
 </html>
