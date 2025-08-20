@@ -3,16 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1C&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap" rel="stylesheet">
   <title>麗澤のお姫様</title>
   <link rel="stylesheet" href="./style.css" />
+  <link rel="icon" href="./images/favicon.ico" type="image/ico" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
   <script src="./script.js" defer></script>
-  <link rel="icon" href="./images/favicon.ico" type="image/ico" />
-  
-
-  </head>
+</head>
 <body>
 
   <header class="site-header">
@@ -21,9 +19,7 @@
     </a>
   </header>
 
-  <!-- 기존 dropdown-nav 제거 -->
-
-  <!-- 오른쪽 커튼 토글 버튼 -->
+  <!-- 커튼 토글 버튼 -->
   <button id="curtainToggle" aria-expanded="false" aria-label="メニューを開く">
     <img src="images/123.png" alt="커튼을 끄는 캐릭터 손" />
   </button>
@@ -31,63 +27,267 @@
   <!-- 커튼 메뉴 -->
   <nav id="curtainMenu" aria-hidden="true" role="navigation" aria-label="メニュー">
     <ul>
-     <li><a href="./shoukai.html">소개 紹介</a></li>
       <li><a href="./korea.html">한국 韓国</a></li>
       <li><a href="./kaisha.html">회사 会社</a></li>
+      <li><a href="./shoukai.html">소개 紹介</a></li>
       <li><a href="./kazoku.html">감상 感想</a></li>
     </ul>
   </nav>
 
-  <!-- 메뉴 오버레이 -->
+  <!-- 오버레이 -->
   <div id="overlay" tabindex="-1"></div>
 
+  <!-- 마우스트레일 캔버스 -->
   <canvas id="cursorCanvas"></canvas>
 
-  <div class="section hero" id="hero">
-    <h1 class="fade">働くことは、生きること。</h1>
-    <p class="fade">会社での時間が、人間らしさや絆を育てる場所になる。</p>
-  </div>
+  
+<aside class="sidebar">
+  <ul>
+    <li><a href="#kazoku" class="active">会社の日本人</a></li>
+    <li><a href="#kaisyaseturitu">会社設立</a></li>
+    <li><a href="#ningen">コミュニケーション</a></li>
+    <li><a href="#ningen2">集まり</a></li>
+    <li><a href="#naganosensei">ながの先生との話</a></li>
+    <li><a href="#itiniti">1日のな流れ</a></li>
+    <li><a href="#keireki">今までの経歴</a></li>
+    <li><a href="#mokuhyou">5年以内の目標</a></li>
+    <li><a href="#kati">価値観</a></li>
+    <li><a href="#simeikan">使命感</a></li>
+    <li><a href="#saiyou">採用</a></li>
+    <li><a href="#taihen">大変だった経験</a></li>
+  </ul>
+</aside>
 
-  <div class="section about" id="about">
-    <h2 class="fade">日々のしごとに込めた想い</h2>
-    <p class="fade">責任、挑戦、そしてチームワーク。木元さんは仕事を通して自分らしさを磨き、周囲に良い影響を与えています。</p>
-  </div>
 
-  <div class="section" id="interview">
-  <h2>インタビュー</h2>
-  <div class="interview-wrap">
+  <!-- 메인 콘텐츠 -->
+  <main>
+    <div class="section" id="interview">
+   
 
-    <article class="card">
-      <span class="label">仕事観</span>
-      <div class="qa">
-        <div class="q">仕事で大切にしていることは？</div>
-        <div class="a bubble">私の名前は木元立彦です。
-現在は韓国の경상북도の포항시にある品川リフラクトリーズという日本の企業、企業,
-会社で勤務してます。この品川リフラクトリーズという会社は1875年、今から150年前に日本の東京で設立されました。今年がちょうど150年目に当たります。
-ここの韓国の品川がリフラクトリーズ。韓国の会社は今から3年前、2022年に新しく設立されました。私は1971年生まれ、日本で言うと54歳になります。
-家族は今現在日本に家族と別れて住んでまして、自宅は日本の埼玉県にあります。
-浦和市ですね。サッカーが有名な浦和レッズがあるところです。
-で、家族は私のワイフと私の娘1人、3人になります。他、何か聞きたいことがありましたら質問いただければと思います。</div>
-      </div>
-    </article>
+      <div class="interview-wrap">
 
-        <article class="card">
-      <span class="label">仕事観</span>
-      <div class="qa">
-        <div class="q">仕事で大切にしていることは？</div>
-        <div class="a bubble">私の名前は木元立彦です。
-現在は韓国の경상북도の포항시にある品川リフラクトリーズという日本の企業、企業,
-会社で勤務してます。この品川リフラクトリーズという会社は1875年、今から150年前に日本の東京で設立されました。今年がちょうど150年目に当たります。
-ここの韓国の品川がリフラクトリーズ。韓国の会社は今から3年前、2022年に新しく設立されました。私は1971年生まれ、日本で言うと54歳になります。
-家族は今現在日本に家族と別れて住んでまして、自宅は日本の埼玉県にあります。
-浦和市ですね。サッカーが有名な浦和レッズがあるところです。
-で、家族は私のワイフと私の娘1人、3人になります。他、何か聞きたいことがありましたら質問いただければと思います。</div>
-      </div>
-    </article>
-  </div>
+      <!-- 기존 카드 2 -->
+      <article id="kazoku" class="card fade">
+        <span class="label">家族について</span>
+        <div class="qa">
+          <div class="q">木元さんの会社の中には日本人の方が結構いらっしゃる方ですか。</div>
+          <div class="a bubble">
+            全くいません。日本人はいませんが、ただ驚いたのは日本語話せる方が多かったことです。少なくとも日本人は何人かいる会社が結構ありますが、ここは日本語話せる方だけいますね。他の会社と比べると少ない方です。
+          </div>
+        </div>
+      </article>
+
+      <!-- 질문 카드 추가 -->
+      <article id="kaisyaseturitu" class="card fade">
+        <span class="label">会社設立について</span>
+        <div class="qa">
+          <div class="q">0から会社を立つっていうことはすごく難しいと思いますが、その中で1番大変だった経験を教えてください。</div>
+          <div class="a bubble">実は全然大変ではなかったです。日本と韓国の法律は非常に似ていましたので、そういう点では難しいことはありませんでした。むしろ韓国の方が会社を作る時に必要な手続きがとても簡単です。日本の場合は銀行や裁判所に実際に行くしかないし、書類には判子が必ず必要になったりしますので、そういう面では韓国の方が進んでいました。そしてインターネットで登録できることが非常に簡単でした。私も思ったより楽で助かりました。
+        </div>
+        </div>
+      </article>
+
+      <article id="ningen" class="card fade">
+        <span class="label">人間関係</span>
+        <div class="qa">
+          <div class="q">韓国に来てから全く新しい人間関係を構築したと思いますが、人間関係を作る中で1番気をつけたところとかありますか。</div>
+          <div class="a bubble">やはり政治の話、歴史の話はしないようにしてます。おそらく韓国人同士でも同じだと思うんですけど、あまり政治の話はしない方がいいですよね。
+        </div>
+        </div>
+      </article>
+
+      <article id="ningen2" class="card fade">
+        <span class="label">人間関係</span>
+        <div class="qa">
+          <div class="q">韓国で人間関係作った時に、普段どこで集まりとか探して参加なさったのでしょうか。</div>
+          <div class="a bubble">まず1つ目は、お客さんが韓国の方ですので、お客さんとか、ビジネスパートナーが韓国人の方ですので、彼らと接触する機会は非常に多いです。もちろん仕事も一緒にしますが、仕事が終わったらご飯を食べたり、お酒を飲んだり、ゴルフに行ったりして非常に仲良くなれますね。</div>
+
+            <div class="a bubble">
+            そして２つ目が、釜山日本人会の繋がりで、永野先生とも知り合いになって、今回このような風に皆さんとお会いできたので、そういう人脈がどんどん伸びていきます。こんなことで韓国の方とはたくさん知り合いになれてますね。</div>
 </div>
-</body>
-<footer class="team-footer">
-  <p>麗澤のお姫様</p>
+        </div>
+      </article>
+
+      <article id="naganosensei" class="card fade">
+        <span class="label">永野先生</span>
+        <div class="qa">
+          <div class="q">永野先生と知り合いになったお話、ちょっと聞かせていただいてもよろしいでしょうか。</div>
+          <div class="a bubble">はい、永野先生はゴルフしますね。私もゴルフが好きな人なので、今まで何回かゴルフ一緒に行きました。それと、永野先生も日本人会に入ってるんですね。うん。そこでクリスマス会とか食事会とか、いろんなイベントやチャンスがあるところで知り合いになりました。</div>
+        </div>
+      </article>
+
+      <article id="itiniti" class="card fade">
+        <span class="label">1日の業務の流れ</span>
+        <div class="qa">
+          <div class="q">木元さんの1日の業務の流れを教えてください。</div>
+          <div class="a bubble">
+            朝起きて日本のニュースをチェックします。なぜなら、家族が日本に住んでいるので、埼玉は今日も無事かなとか地震がないかなと心配ですね。その後ご飯を食べて、30分ぐらい歩いて会社に行きます。</div>
+            <div class="a bubble">
+            そして歩きながら今日はどういう仕事をするか、どのような人と会うかなどを考えます。9時から18時まで仕事の時間ですが、その間には従業員の進行状況を確認したり、お客さんと話したり日本の本社に韓国の状況を報告します。
+           それから、お客さんのところに行って、我々の製品を説明する時もありますのでそこに関してヒアリングします。何かリクエストがあれば直接聞いたりとか、問題がないかとか。</div>
+</div>
+        </div>
+      </article>
+ 
+      <article id="keireki" class="card fade">
+        <span class="label">全体的な経歴</span>
+        <div class="qa">
+          <div class="q">今働いてる会社までの、全体的な経歴</div>
+          <div class="a bubble">
+            今から33年前、1993年に私はこの会社に入りました。会社に入って、海外の営業の部署に配属されました。最初担当したのが韓国なんですね。
+            
+           韓国にはポスコとか현대などの製鉄会社がありますので、そこに行って我々の製品を紹介したり、使ってもらったりして営業をやりました。
+            
+            韓国での勤務が終わってから、次は台湾とかそれからタイとか東南アジアの地域を担当してその後、アメリカとかカナダとかブラジルを担当しました。2001年になって、私はカナダに新しい会社を作るということでカナダに配属されました。そこで6年間働きました。カナダで私の娘が生まれたんですね。
+            
+            だから彼女は、今、二つパソナリティがあります。日本と、カナダ2ついます。2007年に日本に帰って、今度は営業もやりながら、海外にたくさん我々の関係会社がありますから、そこの会社の経営状態とか一緒にプロジェクトやったりとか、そういうサポートする仕事につきました。最初は、オーストラリアとか中国とか、アメリカから、ブラジルを見てたんですが、安定をしてきましたので、新しい会社を韓国に作るということで、2022年に私がこちらの方に来たという経緯です。
+</div>
+        </div>
+      </article>
+
+      <article id="mokuhyou" class="card fade">
+        <span class="label">目標</span>
+        <div class="qa">
+          <div class="q">木元さんが5年以内に達成したい目標とかありますか。</div>
+          <div class="a bubble">今はこの韓国の会社は私が社長で、私がマネージメントしてるんですが、できたら韓国人の社長で、韓国人だけでこの会社が経営できるようにしたいです。
+やはりね、日本人は。日本人じゃないと経営できないっていうと色々問題があるので、韓国の方でもちゃんと経営できるようにな会社の体制にしたい、当然そうして会社を大きくしていってね、韓国の人がたくさん働けるような会社の規模にしていきたいなと考えてます。
+</div>
+        </div>
+      </article>
+
+      <article id="kati" class="card fade">
+        <span class="label">重視する価値</span>
+        <div class="qa">
+          <div class="q">木元さんが経営者として重要だと思う価値がありますか。</div>
+          <div class="a bubble">非常に大事なことはやはり我々は製品を販売する仕事ですので、お客さんとなるべく近いところ、親密に言おうとします。今非常にテクノロジーが発達して、例えば今日みたいにzoomで会話したりとか、電話で会話したりっていうのも簡単ですね。直接会ったりする機会が減りましたけども、私はやはり直接お客さんと会って、お客さんの顔を見て、お客さんの表情を見てするように心がけてます。</div>
+            <div class="a bubble">
+            そうすると、韓国の方は遠くからわざわざ来てくれると非常に喜んでくれますね。そうすると、もっと仲良くなれたりします。その後「一緒に食事行きましょうか。」一緒にご飯を食べたりとか、お酒飲んだりしますよ。仲良くなれたりするので。そういう意味で言うと、私は技術が発達してウェブとかで、バーチャルで会えるような環境ができても私は直接お客さんのところに行って会うようにしてます。</div>
+</div>
+        </div>
+      </article>
+
+      <article id="simeikan" class="card fade">
+        <span class="label">使命感</span>
+        <div class="qa">
+          <div class="q">これまでの人生の中で、これは本当に使命感を持って取り組んだと言えるような経験がございましたら教えてください。</div>
+          <div class="a bubble">私が40代の時が1番大変でした。これまで営業だったので、営業の知識しかなかったです。自然的に営業の仕事しかやったことないですが、40代で会社の経営をどうしてもやらないといけなくなって、そこは新しく経理とか、マネージメントとか、そういうことを勉強しないといけなくなりました。それも海外の会社ですね。</div>
+            <div class="a bubble">
+            韓国の方は皆さん綺麗な日本語を話しているので非常に我々にとってはありがたいのですが、言葉は全部英語なんですね。まず、その経営とか会計のことを勉強して、さらにそれを英語で表現できるように苦労しました。特に、40歳を過ぎたので、若い人と違って覚えることが難しいです。若い時はすぐ覚えられたことが、年をとったらだんだん覚えられなくなって時間がかかりました。その時は本当に大変でした。でもそのおかげで今韓国来れましたので、頑張って非常に良かったなと思います。今思い返すと。</div>
+        </div>
+        </div>
+        </article>
+
+      <article id="saiyou" class="card fade">
+        <span class="label">採用</span>
+        <div class="qa">
+          <div class="q">木元さんが社長として社員を採用する時に、特にここを見ますよっていう重要に思ってるところがありますか。</div>
+          <div class="a bubble">
+            我々は日本の会社ですので、新しい社員が日本の会社でうまくやっていけるかっていうところを見ます。もちろん、その会社は日本だけじゃなくて世界中にあるので日本式じゃなくて世界のスタンダードっていうのがありますね。でも、やはり本社が日本にありますのである程度日本の文化ややり方が理解できるか、できなくてもそういうもの勉強する人かを最初は見ます。</div>
+            <div class="a bubble">
+            その中で、コミュニケーション能力です。まず日本語を話せればきちんと理解できるかっていうの、まず、この方が大事ですね。それと、日本語だけじゃなくて、英語が話せるか、もしくは中国語が話せるかを見ていきます。別に韓国で採用した方は英語とか話せませんが、日本語は非常に上手で、日本で留学した経験がありますという人がいましたので採用したこともあります。そしてチーム活動をどうやってするタイプなのかを見ますね。メンバーとどうやってコミュニケーションするか、どういう風な会話をして、調査はどのようにするかなど。一人でやってしまうと、仕事が進めないので、組織とかチームでうまくやっていけるかなどうかなっていうのは私は非常に重要視します。</div>
+        </div>
+      </article>
+
+  <article id="taihen" class="card fade">
+  <span class="label">一番大変だった経験</span>
+  <div class="qa">
+    <div class="q">木元さんの人生の中で1番大変だった経験と、それをどう克服したかが気になります。</div>
+    <div class="a bubble">
+      そうですね。先ほども言いましたけど、私は40代に新しいキャリア、その会社の経営とか、そういうところを勉強しないといけない、なった時ですね、やはりそこの10年間は非常に大変でした。  
+      新しいことを勉強したりとか、仕事じゃないんですけども、やはりカナダで1人で最初来てですね、2001年、私が30歳だったかな、来て、家族が後から来て、子供がカナダで生まれてっていう時に、韓国は本当楽です。でもね、カナダとは全然違います、生活するのは。  
+      そういう意味で言うと、やっぱり生きていくっていうのが安全。非常に大変でした。</div>
+    </div>
+    </article>
+</div>
+</div>
+      </main>
+
       
+<style>
+  body {
+    display: flex;
+    margin: 0;
+    font-family: 'Noto Serif JP', sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 220px;
+    height: calc(100vh - 80px); /* 헤더 높이만큼 빼서 사이드바가 화면 안에서 스크롤 가능 */
+    background: #f5f0e6;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    overflow-y: auto;
+  }
+
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .sidebar li {
+    margin-bottom: 10px;
+  }
+
+  .sidebar a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all 0.3s;
+  }
+
+  .sidebar a.active,
+  .sidebar a:hover {
+    background: #333;
+    color: #fff;
+  }
+
+  main {
+    margin-left: 240px;
+    padding: 20px;
+    flex: 1;
+  }
+
+  article.card {
+    margin-bottom: 50px;
+    padding: 15px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    scroll-margin-top: 100px;
+
+  }
+</style>
+
+<script>
+  // 클릭 시 active 적용
+  const links = document.querySelectorAll('.sidebar a');
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      links.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+    });
+  });
+
+  // 스크롤 시 활성 메뉴 변경
+  window.addEventListener('scroll', () => {
+    const fromTop = window.scrollY + 60; // 상단 보정
+    links.forEach(link => {
+      const section = document.querySelector(link.getAttribute('href'));
+      if(section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop){
+        links.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+
+
+</body>
 </html>
