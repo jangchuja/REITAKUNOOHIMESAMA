@@ -175,73 +175,81 @@ function openModal(personId) {
 const modal = document.getElementById("modal");
 const modalDetails = document.getElementById("modalDetails");
 
-const profiles = {
-person1: {
-name: "장소윤",
-role: "張蘇允　チャンソユン",
-email: "kwala9@naver.com",
-github: "https://github.com/kwala9",
-hobby: "베이킹",
-image: "images/JSY.jpg"
-},
-person2: {
-name: "장태원",
-      role: "스페인어학과",
-      role: "張泰元　チャンテウォン",
-email: "jto000040@gmail.com",
-github: "https://github.com/jangchuja",
-hobby: "러닝",
-image: "images/JTW.jpg"
-},
-person3: {
-name: "최부권",
-      role: "일본어융합학부",
-      role: "崔傅棬　チェブグォン",
-email: "stitch4324@gmail.com",
-github: "linkedin.com/in/lee",
-hobby: "애니 감상",
-image: "images/CBG.jpg"
+function openModal(personId) {
+  const modal = document.getElementById("modal");
+  const modalDetails = document.getElementById("modalDetails");
+
 }
-};
 
-const person = profiles[personId];
-if (!person || !modal || !modalDetails) return;
+  const profiles = {
+    person1: {
+      name: "장소윤",
+      role: "張蘇允　チャンソユン",
+      email: "kwala9@naver.com",
+      github: "https://github.com/kwala9",
+      hobby: "ベイキング",
+      comment: "チームの皆さんと協力しながら課題を解決できたことが、とても大きな学びになりました。新しい発想に触れることで自分の視野も広がったと感じています。",
+      image: "images/JSY.jpg"
+    },
+    person2: {
+      name: "장태원",
+      role: "張泰元　チャンテウォン",
+      email: "jto000040@gmail.com",
+      github: "https://github.com/jangchuja",
+      hobby: "ランニング",
+      comment: "プロジェクトを進める中で、自分の弱点や改善点に気づくことができました。同時に仲間の支えの大切さを改めて実感し、貴重な経験となりました。",
+      image: "images/JTW.jpg"
+    },
+    person3: {
+      name: "최부권",
+      role: "崔傅棬　チェブグォン",
+      email: "stitch4324@gmail.com",
+      github: "linkedin.com/in/lee",
+      hobby: "アニメ鑑賞",
+      comment: "最初は不安もありましたが、最後までやり遂げられたことで自信につながりました。学んだことを今後の挑戦に活かしていきたいと思います。",
+      image: "images/CBG.jpg"
+    }
+  };
 
-modalDetails.innerHTML = `
-   <div class="card-layout">
-     <div class="card-left">
-       <img src="${person.image}" alt="${person.name}" />
+  const person = profiles[personId];
+  if (!person || !modal || !modalDetails) return;
+
+  modalDetails.innerHTML = `
+     <div class="card-layout">
+       <div class="card-left">
+         <img src="${person.image}" alt="${person.name}" />
+       </div>
+       <div class="card-right">
+         <h2>${person.name}</h2>
+         <p>${person.role}</p>
+         <p>📧 ${person.email}</p>
+         <p>💼 <a href="#">${person.github}</a></p>
+         <p>🎯 趣味: ${person.hobby}</p>
+         <p>📝 感想: ${person.comment}</p>
+       </div>
      </div>
-     <div class="card-right">
-       <h2>${person.name}</h2>
-       <p>${person.role}</p>
-       <p>📧 ${person.email}</p>
-       <p>💼 <a href="#">${person.github}</a></p>
-       <p>🎯 취미: ${person.hobby}</p>
-     </div>
-   </div>
- `;
+   `;
 
-modal.style.display = "flex";
-setTimeout(() => {
-modal.style.opacity = "1";
-}, 10);
+  modal.style.display = "flex";
+  setTimeout(() => {
+    modal.style.opacity = "1";
+  }, 10);
 }
 
 function closeModal() {
-const modal = document.getElementById("modal");
-if (modal) {
-modal.style.opacity = "0";
-setTimeout(() => {
-modal.style.display = "none";
-}, 300);
-}
+  const modal = document.getElementById("modal");
+  if (modal) {
+    modal.style.opacity = "0";
+    setTimeout(() => {
+      modal.style.display = "none";
+    }, 300);
+  }
 }
 
 window.addEventListener('load', () => {
-setTimeout(() => {
-window.scrollTo(0, 0);
-}, 0);
+  setTimeout(() => {
+    window.scrollTo(0, 0);
+  }, 0);
 });
 
 
