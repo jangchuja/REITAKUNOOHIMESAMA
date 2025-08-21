@@ -10,6 +10,20 @@ body {
 
 
 
+.label{
+  display:inline-block;
+  font-size:12px;
+  letter-spacing:.08em;
+  color:#59606b;
+  background:#f3efe7;
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:4px 10px;
+  margin-bottom:10px;
+}
+
+
+
 /* 1) 가로로만 펼치기: 한 줄, 간격 유지, 겹침 없음 */
 .card-container {
   display: flex;
@@ -58,8 +72,8 @@ body {
   display: block;
   width: 100%;
   margin-top: 8px;
-  font-family: 'Sacramento', cursive; /* or 'Homemade Apple' */
-  font-size: 22px;
+  font-family: 'Lacquer', cursive; /* or 'Homemade Apple' */
+  font-size: 40px;
   font-weight: bold;
   color: #1a1919;
   text-align: center;
@@ -93,19 +107,22 @@ body {
 /* 1번 카드 */
 .polaroid-card:nth-child(1) .photo-label {
   transform: rotate(-9deg);
-  margin-left: -50px;   /* 살짝 왼쪽 */
+  margin-left: -10px;   /* 살짝 왼쪽 */
+  margin-top: -15px;
 }
 
 /* 2번 카드 */
 .polaroid-card:nth-child(2) .photo-label {
-  transform: rotate(3.7deg);
-  margin-left: 50px;  /* 조금 오른쪽 */
+  transform: rotate(6.7deg);
+  margin-left: 30px;  /* 조금 오른쪽 */
+  margin-top: -10px;
 }
 
 /* 3번 카드 */
 .polaroid-card:nth-child(3) .photo-label {
-  transform: rotate(-3deg);
+  transform: rotate(-7deg);
   margin-left: -5px;  /* 왼쪽으로 쏠림 */
+    margin-top: -10px;
 }
 
 
