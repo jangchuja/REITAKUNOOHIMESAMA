@@ -10,6 +10,115 @@ body {
 
 
 
+/* 1) 가로로만 펼치기: 한 줄, 간격 유지, 겹침 없음 */
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0;
+  padding: 60px 20px;
+  flex-wrap: nowrap;       /* 가로만 펼치기 */
+}
+
+/* 2) 카드: 고정 폭 + 비율 + 회전값 변수로 관리 */
+.polaroid-card {
+  --rot: 0deg;             /* 카드별 회전값(아래 nth-child에서 설정) */
+  position: relative;
+  flex: 0 0 230px;         /* 줄어들지 않게 고정폭 */
+  width: 230px;
+  aspect-ratio: 3 / 4;     /* 폴라로이드 비율 */
+  margin: 0;               /* 예전 음수 마진/여백 제거 */
+  transform: rotate(var(--rot));
+  transform-origin: center bottom;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+/* 3) 프레임 + 이미지: 높이 들쭉 방지 */
+.polaroid-frame {
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  padding: 14px 14px 46px;
+  border: 12px solid #fff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.22);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.polaroid-frame img {
+  width: 100%;
+  aspect-ratio: 3 / 4;     /* 사진도 동일 비율 */
+  object-fit: cover;        /* 꽉 채우기(여백 없이) */
+  display: block;
+  border-radius: 2px;
+}
+
+/* 4) 라벨: 한 줄 고정(넘치면 …), 중앙 정렬 */
+.photo-label {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  font-family: 'Sacramento', cursive; /* or 'Homemade Apple' */
+  font-size: 22px;
+  font-weight: bold;
+  color: #1a1919;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.polaroid-card:nth-child(1) { margin-right: 10px; } /* 1번-2번 사이 */
+.polaroid-card:nth-child(2) { margin-right: 80px; } /* 2번-3번 사이 */
+.polaroid-card:nth-child(3) { margin-right: 0px; } /* 3번-4번 사이 */
+
+/* 5) 카드별 회전값: '살짝'만 */
+.card-container .polaroid-card:nth-child(1) { --rot: -6deg; }
+.card-container .polaroid-card:nth-child(2) { --rot:  4deg; }
+.card-container .polaroid-card:nth-child(3) { --rot: -5deg; }
+/* 더 있으면 0.2~0.6deg 사이로 번갈아 주면 자연스러움 */
+
+/* 6) 호버 시 살짝 띄우되, 기울기는 유지 */
+@media (hover:hover) and (pointer:fine) {
+  .polaroid-card:hover {
+    transform: translateY(-8px) scale(1.03) rotate(var(--rot));
+    z-index: 1;
+  }
+  .polaroid-card:hover .polaroid-frame {
+    box-shadow: 0 16px 32px rgba(0,0,0,0.28);
+  }
+}
+
+
+
+/* 1번 카드 */
+.polaroid-card:nth-child(1) .photo-label {
+  transform: rotate(-9deg);
+  margin-left: -50px;   /* 살짝 왼쪽 */
+}
+
+/* 2번 카드 */
+.polaroid-card:nth-child(2) .photo-label {
+  transform: rotate(3.7deg);
+  margin-left: 50px;  /* 조금 오른쪽 */
+}
+
+/* 3번 카드 */
+.polaroid-card:nth-child(3) .photo-label {
+  transform: rotate(-3deg);
+  margin-left: -5px;  /* 왼쪽으로 쏠림 */
+}
+
+
+
+
+.caption {
+  margin-top: 12px;
+  font-family: 'Yusei Magic', sans-serif;
+  font-size: 17px;
+  color: #333;
+  font-weight: bold;
+}
+
 /* 헤더 */
 .site-header {
   position: fixed;
