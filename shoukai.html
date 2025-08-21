@@ -6,6 +6,8 @@
   <title>麗澤のお姫様</title>
   <link rel="icon" href="./images/favicon.ico" type="image/ico" />
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1C&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="./style.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
@@ -28,10 +30,10 @@
   <!-- 커튼 메뉴 -->
   <nav id="curtainMenu" aria-hidden="true" role="navigation" aria-label="メニュー">
     <ul>
+      <li><a href="./index.html">HOME</a></li>
       <li><a href="./korea.html">한국 韓国</a></li>
       <li><a href="./kaisha.html">회사 会社</a></li>
-      <li><a href="./shoukai.html">소개 紹介</a></li>
-      <li><a href="./kazoku.html">감상 感想</a></li>
+            <li><a href="./shoukai.html">소개 紹介</a></li>
     </ul>
   </nav>
 
@@ -42,23 +44,29 @@
   <canvas id="cursorCanvas"></canvas>
 
   <!-- 카드 섹션 -->
-  <div class="card-container">
-    <div class="id-card" onclick="openModal('person1')">
-      <img src="images/JSY.jpg" alt="장소윤">
-      <h3>チャンソユン</h3>
-      <p>日本語融合学部</p>
-    </div>
-    <div class="id-card" onclick="openModal('person2')">
-      <img src="images/JTW.jpg" alt="장태원">
-      <h3>チャンテウォン</h3>
-      <p>スペイン語学部</p>
-    </div>
-    <div class="id-card" onclick="openModal('person3')">
-      <img src="images/CBG.jpg" alt="최부권">
-      <h3>チェブグォン</h3>
-      <p>日本語融合学部</p>
+<div class="card-container">
+  <div class="polaroid-card" onclick="openModal('person1')">
+    <div class="polaroid-frame">
+      <img src="images/JSY.jpg" alt="장소윤" />
+      <div class="photo-label">JANG SOYUN</div>　
     </div>
   </div>
+
+  <div class="polaroid-card" onclick="openModal('person2')">
+    <div class="polaroid-frame">
+      <img src="images/JTW.jpg" alt="장태원" />
+      <div class="photo-label">JANG TAEWON</div>
+    </div>
+  </div>
+
+  <div class="polaroid-card" onclick="openModal('person3')">
+    <div class="polaroid-frame">
+      <img src="images/CBG.jpg" alt="최부권" />
+      <div class="photo-label">CHOI BUGWON</div>
+    </div>
+  </div>
+</div>
+
 
   <!-- 모달 (하나로 통합 + 카드 형식 적용) -->
   <div id="modal" class="modal">
@@ -67,7 +75,6 @@
       <div id="modalDetails"></div>
     </div>
   </div>
-
 
 </body>
 </html>
