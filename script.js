@@ -204,7 +204,7 @@ function openModal(personId) {
       name: "최부권",
       role: "崔傅棬　チェブグォン",
       email: "stitch4324@gmail.com",
-      github: "linkedin.com/in/lee",
+      github: "https://github.com/buu-boop",
       hobby: "アニメ鑑賞",
       comment: "最初は不安もありましたが、最後までやり遂げられたことで自信につながりました。学んだことを今後の挑戦に活かしていきたいと思います。",
       image: "images/CBG.jpg"
